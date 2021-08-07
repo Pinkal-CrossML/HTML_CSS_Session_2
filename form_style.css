@@ -1,0 +1,29 @@
+table{
+    background-color: rgb(202, 202, 202);
+    border: 1px solid black;
+    margin: 0 ; 
+    font-size: 14px;           
+} 
+label{ 
+    display: block;
+    text-align: right;
+}
+input{
+    width: 80%;
+}
+input[radio]{
+    display: inline-block;
+}
+select{
+    margin-right: 10px;
+    padding: 5px;
+    width: 35%;
+}
+i{
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    color: white;
+}
+h3{
+    margin: 5px auto;
+}
