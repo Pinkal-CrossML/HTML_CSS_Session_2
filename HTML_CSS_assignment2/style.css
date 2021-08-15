@@ -1,0 +1,65 @@
+h1{
+    color: rgb(0, 0, 0);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-horizontal {
+    display: flex;
+    flex: auto;
+    text-align: center;
+  }
+
+  .container1 {
+    background: url("head.jpg") no-repeat;
+    position: relative;
+    font-family: Arial;
+    background-size: cover;
+    height: 700px;
+  }
+  
+  .text-block {
+   
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    right: 20px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 8px;
+    width: 50%;
+    height: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+
+
+  * {
+    box-sizing: border-box;
+  }
+  
+header {
+    background-color: rgb(252, 217, 62);
+    padding: 70px;
+    text-align: left ;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    /* font-size: 35px; */
+    /* color: rgb(255, 255, 255); */
+  }
+
+  footer {
+    background-color: rgb(14, 23, 37);
+    padding: 70px;
+    text-align: center;
+    font-size: 35px;
+    color: rgba(255, 255, 255, 0.829);
+  }
+
+
+  .avatar {
+    vertical-align: middle;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+
+  }
