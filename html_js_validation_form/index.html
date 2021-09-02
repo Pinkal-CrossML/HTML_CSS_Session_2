@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body style="background-color: rgb(202, 202, 202);" onload="document.myform.email.focus();document.myform.number.focus();document.myform.password1.focus()" >
+
+  <div class="container">
+
+    <div class="col-6 mx-auto mt-5">
+      <div class="card shadow">
+        <div class="card-body">
+          <h3 class="card-title">SIGN UP</h3>
+          <br>
+          <form name="myform" method="POST">
+
+
+            <div class="form-group">
+
+              <input type="text" id="f_name" class="form-control" name="name" placeholder="First Name">
+
+
+            </div>
+            <br>
+            <div class="form-group">
+
+              <input type="text" id="l_name" class="form-control border " name="last_name" placeholder="Last Name" required>
+
+
+            </div>
+            <br>
+            <div class="form-group">
+
+              <input type="text" id="email" class="form-control border" name="email" placeholder="Enter your Email" )>
+
+
+            </div>
+            <br>
+            <div class="form-group">
+
+              <input type="text" id="number" class="form-control border" name="number"
+                placeholder="Enter your Phone Number">
+
+
+            </div>
+            <br>
+
+            <div class="form-group">
+
+              <input type="password" id="password1" class="form-control border" name="password1" placeholder="Password"
+                >
+            </div>
+            <br>
+
+            <div class="form-group">
+
+              <input type="password" id="password2" class="form-control border" name="password2"
+                placeholder="Confirm Password" required>
+            </div>
+            <br>
+
+            <button type="button" onclick="ValidateEmail(document.myform.email);phonenumber(document.myform.number);
+            CheckPassword(document.myform.password1);confpass(document.myform.password2); fillData();" name="submit" class="btn btn-primary">Sign up</button>
+
+            <a class="btn btn-primary" href="login.html" role="button">Login</a>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+
+  </div><br>
+  <!-- tabel  -->
+  <div style="text-align: center;">
+    <h1>USER INFORMATION</h1>
+  </div>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Sr:No</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Phone Number</th>
+      </tr>
+    </thead>
+    <tbody id="data_tbl">
+      <tr>
+        <th scope="row">1</th>
+        <td id="data_tbl_val1"></td>
+        <td id="data_tbl_val2"></td>
+        <td id="data_tbl_val3"></td>
+        <td id="data_tbl_val4"></td>
+        
+
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- end table -->
+
+  <!-- js_validation -->
+
+  <script>
+
+    function fillData(){
+      var f_name = document.getElementById('f_name').value;
+      var l_name = document.getElementById('l_name').value;
+      var email = document.getElementById('email').value;
+      var ph = document.getElementById('number').value;
+
+      document.getElementById('data_tbl_val1').innerHTML = f_name;
+      document.getElementById('data_tbl_val2').innerHTML = l_name;
+      document.getElementById('data_tbl_val3').innerHTML = email;
+      document.getElementById('data_tbl_val4').innerHTML = ph;
+
+
+    }
+    function ValidateEmail(input) {
+
+      var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+      if (input.value.match(validRegex)) {
+        
+
+        return true;
+
+      } else {
+        alert("Invalid email address!");
+        document.myform.email.focus();
+        return false;
+      }
+
+    }
+    function phonenumber(input) {
+      var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+
+      if (input.value.match(phoneno)) {
+        
+        return true;
+      }
+      else {
+        alert("Enter your phone number like 333-333-4444");
+        document.myform.number.focus();
+        return false;
+      }
+    }
+    function CheckPassword(input) {
+     
+      var decimal = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+      if (input.value.match(decimal)) {
+        
+        return true;
+      }
+      else{
+        alert('Wrong password format...!')
+        document.myform.password1.focus();
+
+    }
+  }
+    function confpass(inputtxt){
+      var pass1 = document.forms['myform']['password1'].value;
+      var pass2 = document.forms['myform']['password2'].value;
+      if(pass1 != pass2){
+        alert("password not matched")
+        return false;
+      }
+    }
+
+  
+  </script>
+
+  <!-- end js_validation -->
+
+</body>
+
+</html>
